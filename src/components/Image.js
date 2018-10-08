@@ -13,7 +13,7 @@ export const fadeIn = keyframes`
 `;
 
 const Container = styled.div`
-  overflow: hidden;
+  overflow: hidden; 
   animation: ${fadeIn} .6s ease;
   cursor: pointer;
 
