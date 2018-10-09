@@ -12,7 +12,7 @@ const Header = () => (
   </Nav>
 );
 
-export const HEADER_HEIGHT = '10rem';
+export const header_height = '10rem';
 
 const Nav = styled.nav`
   background-color: var(--light-gray);
@@ -21,7 +21,7 @@ const Nav = styled.nav`
   width: 100%;
   display: flex;
   align-items: center;
-  height: ${HEADER_HEIGHT};
+  height: ${header_height};
   padding: 0 4rem;
   z-index: var(--z-header);
 

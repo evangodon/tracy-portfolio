@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { HEADER_HEIGHT } from 'components/Header';
+import { header_height } from 'components/Header';
 import Image from 'components/Image';
 
 const Home = () => (
@@ -17,7 +17,7 @@ const Home = () => (
 );
 
 const GridGallery = styled.div`
-  height: calc(100vh - ${HEADER_HEIGHT}); /* fill-screen until header */
+  height: calc(100vh - ${header_height}); /* fill-screen until header */
   overflow-y: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(60rem, 1fr));

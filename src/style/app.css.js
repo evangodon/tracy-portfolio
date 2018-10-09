@@ -1,5 +1,7 @@
 import { injectGlobal } from 'styled-components';
-import './variables.css';
+import * as variables from './variables.css';
+
+const { media } = variables;
 
 injectGlobal`
   * {
@@ -10,6 +12,10 @@ injectGlobal`
   
   html {
     font-size: 62.5%;
+
+    ${media.xlarge`
+      font-size: 50%;
+    `}
   }
 
   body {

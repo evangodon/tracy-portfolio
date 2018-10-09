@@ -15,11 +15,7 @@ const AnimatedRoutes = ({ getComponentForPath, router, staticURL }) => (
       }
 
       if (staticURL) {
-        return (
-          <div style={{ position: 'relative' }}>
-            <Comp {...props} />
-          </div>
-        );
+        return null;
       }
 
       return (
