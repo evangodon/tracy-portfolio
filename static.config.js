@@ -1,19 +1,6 @@
 import React, { Component } from 'react';
 import { ServerStyleSheet } from 'styled-components';
-
-const fs = require('fs');
-const matter = require('gray-matter');
-
-const getAboutData = async () => {
-  if (!fs.existsSync('./public/content/about.md')) {
-    console.error('File about.md not found. Data for about section will be missing.');
-    return;
-  }
-
-  const data = fs.readFileSync('./public/content/about.md');
-  const dataObj = matter(data);
-  return dataObj;
-};
+import { getAboutData, getPortfolioData } from './src/api';
 
 export default {
   siteRoot: 'https://traci.netlify.com',
@@ -22,17 +9,17 @@ export default {
   }),
   getRoutes: async () => {
     const aboutData = await getAboutData();
+    const portfolioData = await getPortfolioData();
     return [
       {
         path: '/',
-        component: 'src/pages/Portfolio'
+        component: 'src/pages/Portfolio',
+        getData: () => ({ portfolioData })
       },
       {
         path: '/about',
         component: 'src/pages/About',
-        getData: () => ({
-          aboutData
-        })
+        getData: () => ({ aboutData })
       },
       {
         is404: true,

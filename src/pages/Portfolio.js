@@ -1,18 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import { withRouteData } from 'react-static';
 import { header_height } from 'components/Header';
 import Image from 'components/Image';
 
-const Home = () => (
+const Portfolio = ({ portfolioData }) => (
   <GridGallery>
-    <Image url="https://source.unsplash.com/random?nature" />
-    <Image url="https://source.unsplash.com/random?water" />
-    <Image url="https://source.unsplash.com/random?mountain" />
-    <Image url="https://source.unsplash.com/random?desert" />
-    <Image url="https://source.unsplash.com/random?jungle" />
-    <Image url="https://source.unsplash.com/random?ice" />
-    <Image url="https://source.unsplash.com/random?city" />
-    <Image url="https://source.unsplash.com/random?space" />
+    {(portfolioData || []).map((project, index) => (
+      <Image key={index} url={project.portfolio_image} />
+    ))}
   </GridGallery>
 );
 
@@ -25,4 +21,4 @@ const GridGallery = styled.div`
   grid-auto-flow: row dense;
 `;
 
-export default Home;
+export default withRouteData(Portfolio);
