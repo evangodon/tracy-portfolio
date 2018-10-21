@@ -14,8 +14,13 @@ const AnimatedRoutes = ({ getComponentForPath, router, staticURL }) => (
         Comp = getComponentForPath('404');
       }
 
+      // TODO: Fix hydration issue
       if (staticURL) {
-        return null;
+        return (
+          <div style={{ position: 'relative' }}>
+            <Comp {...props} />
+          </div>
+        )
       }
 
       return (
