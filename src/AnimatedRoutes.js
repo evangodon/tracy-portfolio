@@ -15,7 +15,12 @@ const AnimatedRoutes = ({ getComponentForPath, router, staticURL }) => (
       }
 
       if (staticURL) {
-        return null;
+        return (
+          // This relative wrapper is necessary for accurate rehydration :)
+          <div style={{ position: 'relative' }}>
+            <Comp {...props} />
+          </div>
+        )
       }
 
       return (
