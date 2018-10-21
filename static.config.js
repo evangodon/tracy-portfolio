@@ -17,6 +17,11 @@ export default {
         getData: () => ({ portfolioData })
       },
       {
+        path: '/sketches',
+        component: 'src/pages/Sketches',
+        getData: () => ({ portfolioData })
+      },
+      {
         path: '/about',
         component: 'src/pages/About',
         getData: () => ({ aboutData })

@@ -12,11 +12,11 @@ const Portfolio = ({ portfolioData }) => (
   </GridGallery>
 );
 
-const GridGallery = styled.div`
+export const GridGallery = styled.div`
   height: calc(100vh - ${header_height}); /* fill-screen until header */
   overflow-y: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(70rem, 1fr));
   grid-auto-rows: 50%;
   grid-auto-flow: row dense;
 `;

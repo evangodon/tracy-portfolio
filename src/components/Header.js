@@ -1,14 +1,16 @@
 import React from 'react';
-import { Link } from 'react-static';
+import { NavLink } from 'react-static';
 import styled from 'styled-components';
+import { fade_in } from 'style/animations.css';
 
 const Header = () => (
   <Nav>
     <h1>Tracy concept art</h1>
-    <Link exact to="/">
+    <NavLink exact to="/">
       Portfolio
-    </Link>
-    <Link to="/about">About</Link>
+    </NavLink>
+    <NavLink to="/sketches">Sketches</NavLink>
+    <NavLink to="/about">About</NavLink>
   </Nav>
 );
 
@@ -24,6 +26,7 @@ const Nav = styled.nav`
   height: ${header_height};
   padding: 0 4rem;
   z-index: var(--z-header);
+  animation: ${fade_in} 0.2s ease;
 
   h1 {
     font-size: 3.4rem;
@@ -34,12 +37,29 @@ const Nav = styled.nav`
 
   a {
     color: var(--black);
-    padding: 1rem;
     display: inline-block;
+    position: relative;
+  }
+
+  a:after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    border-bottom: 2px solid currentColor;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.4s cubic-bezier(1, 0, 0, 1) 0.16s;
+  }
+
+  .active:after {
+    transform: scaleX(1);
   }
 
   a + a {
-    margin-left: 1rem;
+    margin-left: 1.8rem;
   }
 `;
 

@@ -23,6 +23,7 @@ injectGlobal`
       'Lucida Grande', sans-serif;
     font-weight: 300;
     font-size: 1.6rem;
+    background: var(--bg-color);
   }
   
   a {

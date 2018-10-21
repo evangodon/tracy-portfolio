@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+import { fade_in } from 'style/animations.css';
 
 const Image = ({ url }) => (
   <Container>
@@ -7,23 +8,23 @@ const Image = ({ url }) => (
   </Container>
 );
 
-export const fadeIn = keyframes`
-  from { opacity: 0;}
-  to { opacity: 1;}
-`;
-
 const Container = styled.div`
-  overflow: hidden; 
-  animation: ${fadeIn} .6s ease;
+  overflow: hidden;
+  animation: ${fade_in} 0.4s ease;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 
   .grid__image {
     transition: transform 0.2s ease;
-    object-fit: contain;
+    object-fit: cover;
+    vertical-align: middle;
+    min-width: 100%;
+    height: 100%;
   }
-  
+
   .grid__image:hover {
-    transform: scale(1.4);
+    transform: scale(1.2);
   }
 `;
 

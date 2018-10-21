@@ -33,6 +33,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   padding: 8rem;
+  background: #fff;
 
   .About {
     width: 120rem;
@@ -44,6 +45,7 @@ const Container = styled.div`
       width: 50%;
       object-fit: contain;
       margin-right: 2.8rem;
+      border-radius: 2px;
     }
 
     &__name {

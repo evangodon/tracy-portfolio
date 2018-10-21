@@ -22,6 +22,7 @@ injectGlobal`
     --white: #FFF;
     --black: #212121;
     --light-gray: #ECEFF1;
+    --bg-color: #222;
 
     /* Z-indexes*/
     --z-header: 100;
