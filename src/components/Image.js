@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { fade_in } from 'style/animations.css';
+import withLightBoxContext from 'lightbox/withLightBoxContext';
 
-const Image = ({ url }) => (
-  <Container>
+const Image = ({ url, context }) => (
+  <Container onClick={context.toggleLightBox}>
     <img src={url} className="grid__image" alt="project" />
   </Container>
 );
@@ -28,4 +29,4 @@ const Container = styled.div`
   }
 `;
 
-export default Image;
+export default withLightBoxContext(Image);

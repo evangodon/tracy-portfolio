@@ -26,6 +26,7 @@ injectGlobal`
 
     /* Z-indexes*/
     --z-header: 100;
-
+    --z-lightbox-overlay: 300;
+    --z-lightbox-image: 500;
   }
 `;

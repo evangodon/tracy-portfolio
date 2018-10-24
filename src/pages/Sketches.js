@@ -1,5 +1,6 @@
 import React from 'react';
-import {GridGallery} from './Portfolio';
+import withLightBoxContext from 'lightbox/withLightBoxContext';
+import { GridGallery } from './Portfolio';
 
 const Sketches = () => (
   <GridGallery>
@@ -7,4 +8,4 @@ const Sketches = () => (
   </GridGallery>
 );
 
-export default Sketches;
+export default withLightBoxContext(Sketches);
