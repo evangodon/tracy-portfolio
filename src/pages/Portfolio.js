@@ -7,7 +7,7 @@ import Image from 'components/Image';
 const Portfolio = ({ portfolioData }) => (
   <GridGallery>
     {(portfolioData || []).map((project, index) => (
-      <Image key={index} url={project.portfolio_image} />
+      <Image key={index} url={project.portfolio_image} delay={index * 50}/>
     ))}
   </GridGallery>
 );
