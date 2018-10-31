@@ -4,9 +4,12 @@ import { fade_in } from 'style/animations.css';
 import withLightBoxContext from 'lightbox/withLightBoxContext';
 
 const Image = ({ url, context, delay }) => (
-  <Container delay={delay} onClick={context.toggleLightBox}>
-    {console.log(delay)}
-    <img src={url} className="grid__image" alt="project" />
+  <Container delay={delay} onClick={() => context.toggleLightBox(url)}>
+    <img
+      src={url}
+      className="grid__image"
+      alt="project"
+    />
   </Container>
 );
 

@@ -19,6 +19,7 @@ export const GridGallery = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(55rem, 1fr));
   grid-auto-rows: minmax(28rem, 50%);
   grid-auto-flow: row dense;
+  background: linear-gradient(to right bottom, #232526, #414345);
 `;
 
 export default withRouteData(Portfolio);

@@ -51,7 +51,7 @@ const Nav = styled.nav`
     width: 100%;
     transform: scaleX(0);
     transform-origin: left;
-    transition: 0.4s cubic-bezier(1, 0, 0, 1) 0.16s;
+    transition: 0.2s cubic-bezier(1, 0, 0, 1) 0.16s;
   }
 
   .active:after {

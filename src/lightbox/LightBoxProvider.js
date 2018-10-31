@@ -4,11 +4,12 @@ export const LightBoxContext = React.createContext();
 
 class LightBoxProvider extends Component {
   state = {
-    lightBoxOpen: false
+    lightBoxOpen: false,
+    image: '',
   };
 
-  toggleLightBox = () => {
-    this.setState({ lightBoxOpen: !this.state.lightBoxOpen });
+  toggleLightBox = image => {
+    this.setState({ lightBoxOpen: !this.state.lightBoxOpen, image });
   };
 
   render() {
@@ -16,7 +17,8 @@ class LightBoxProvider extends Component {
       <LightBoxContext.Provider
         value={{
           lightBoxOpen: this.state.lightBoxOpen,
-          toggleLightBox: this.toggleLightBox
+          image: this.state.image,
+          toggleLightBox: this.toggleLightBox,
         }}
       >
         {this.props.children}
