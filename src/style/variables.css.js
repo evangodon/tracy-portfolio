@@ -1,5 +1,6 @@
 import { injectGlobal, css } from 'styled-components';
 
+/* Media Queries */
 const sizes = {
   xlarge: 1400,
   medium: 900,
