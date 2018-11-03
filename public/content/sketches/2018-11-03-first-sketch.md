@@ -1,5 +1,5 @@
 ---
 title: First sketch
-sketch_image: 'https://ucarecdn.com/1fdba58d-4954-4933-891e-5c3460467783/'
+sketch_image: 'https://ucarecdn.com/59a445b0-1594-4737-9b92-04db33baf84e/'
 ---
 
