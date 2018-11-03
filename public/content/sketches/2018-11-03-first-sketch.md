@@ -1,5 +1,5 @@
 ---
 title: First sketch
-portfolio_image: /uploads/sketch-example.jpg
+sketch_image: /uploads/sketch-example.jpg
 ---
 
