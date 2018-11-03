@@ -1,11 +1,14 @@
 import React from 'react';
-import withLightBoxContext from 'lightbox/withLightBoxContext';
+import { withRouteData } from 'react-static';
+import Image from 'components/Image';
 import { GridGallery } from './Portfolio';
 
-const Sketches = () => (
+const Sketches = ({sketchesData}) => (
   <GridGallery>
-    <div>Hey</div>
+    {(sketchesData || []).map((project, index) => (
+      <Image key={index} url={project.sketch_image} delay={index * 50}/>
+    ))}
   </GridGallery>
 );
 
-export default withLightBoxContext(Sketches);
+export default withRouteData(Sketches);

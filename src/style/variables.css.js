@@ -1,21 +1,6 @@
-import { injectGlobal, css } from 'styled-components';
+import { injectGlobal } from 'styled-components';
 
-/* Media Queries */
-const sizes = {
-  xlarge: 1400,
-  medium: 900,
-  small: 576
-};
 
-export const media = Object.keys(sizes).reduce((acc, label) => {
-  acc[label] = (...args) => css`
-    @media (max-width: ${sizes[label] / 16}em) {
-      ${css(...args)};
-    }
-  `;
-
-  return acc;
-}, {});
 
 injectGlobal`
   :root {

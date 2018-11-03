@@ -1,4 +1,5 @@
 import { injectGlobal } from 'styled-components';
+import { media } from 'style/mixins.css';
 import './variables.css';
 
 injectGlobal`
@@ -11,6 +12,9 @@ injectGlobal`
   html {
     font-size: 62.5%;
 
+    ${media.desktop`
+      font-size: 50%;
+    `}
   }
 
   body {

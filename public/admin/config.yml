@@ -23,6 +23,17 @@ collections:
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - label: Image Full Size
+      - label: Image
         name: "portfolio_image"
+        widget: "image"
+
+  - name: "sketches"
+    label: "Sketch"
+    folder: "public/content/sketches"
+    slug: "{{year}}-{{month}}-{{day}}--{{slug}}"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - label: Image
+        name: "sketch_image"
         widget: "image"

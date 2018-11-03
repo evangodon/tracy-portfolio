@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { withRouteData } from 'react-static';
 import { header_height } from 'components/Header';
+import { media } from 'style/mixins.css';
 
 const About = ({ aboutData }) => (
   <Container>
@@ -36,10 +37,10 @@ const Container = styled.div`
   background: #fff;
 
   .About {
-    width: 120rem;
-    height: 40rem;
+    max-width: 120rem;
     display: flex;
     align-items: center;
+
 
     &__picture {
       width: 50%;
@@ -52,6 +53,21 @@ const Container = styled.div`
       margin-bottom: 1.6rem;
       align-self: flex-start;
     }
+
+    &__body {
+      max-width: 65rem;
+    }
+
+    ${media.desktop`
+      width: 100%;
+      flex-direction: column;
+
+      &__picture {
+        margin: 5rem 0;
+        width: 100%;
+        max-width: 65rem;
+      }
+    `}
   }
 `;
 

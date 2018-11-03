@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-static';
 import styled from 'styled-components';
 import { fade_in } from 'style/animations.css';
+import { media } from 'style/mixins.css';
 
 const Header = () => (
   <Nav>
@@ -33,6 +34,10 @@ const Nav = styled.nav`
     text-transform: uppercase;
     margin-right: 2.8rem;
     letter-spacing: 0.05rem;
+
+    ${media.desktop`
+      display: none
+    `}
   }
 
   a {

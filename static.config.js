@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ServerStyleSheet } from 'styled-components';
-import { getAboutData, getPortfolioData } from './src/api';
+import { getAboutData, getPortfolioData, getSketchesData } from './src/api';
 
 export default {
   siteRoot: 'https://traci.netlify.com',
@@ -10,6 +10,7 @@ export default {
   getRoutes: async () => {
     const aboutData = await getAboutData();
     const portfolioData = await getPortfolioData();
+    const sketchesData = await getSketchesData();
     return [
       {
         path: '/',
@@ -19,7 +20,7 @@ export default {
       {
         path: '/sketches',
         component: 'src/pages/Sketches',
-        getData: () => ({ portfolioData })
+        getData: () => ({ sketchesData })
       },
       {
         path: '/about',

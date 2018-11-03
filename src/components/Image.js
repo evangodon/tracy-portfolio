@@ -20,9 +20,10 @@ const Container = styled.div`
   cursor: pointer;
   display: flex;
   justify-content: center;
+  max-width: 100rem;
 
   .grid__image {
-    transition: transform 0.2s ease;
+    transition: transform 0.15s ease-in;
     object-fit: cover;
     vertical-align: middle;
     min-width: 100%;
@@ -30,7 +31,7 @@ const Container = styled.div`
   }
 
   .grid__image:hover {
-    transform: scale(1.2);
+    transform: scale(1.4);
   }
 `;
 
