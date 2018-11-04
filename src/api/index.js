@@ -13,6 +13,7 @@ export const getAboutData = async () => {
   const aboutData = matter(data);
   return {
     title: aboutData.data.title,
+    profile: aboutData.data.profile,
     content: aboutData.content
   };
 };

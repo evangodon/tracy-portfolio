@@ -3,34 +3,39 @@ import styled from 'styled-components';
 import { fade_in } from 'style/animations.css';
 import withLightBoxContext from 'lightbox/withLightBoxContext';
 
+const imageSizes = [320, 450, 500, 640, 750, 800, 900];
+
 const Image = ({ url, context, delay }) => (
-  <Container delay={delay} onClick={() => context.toggleLightBox(url)}>
-    <img
+  <ImageContainer delay={delay} onClick={() => context.toggleLightBox(url)}>
+    <Img
       src={url}
-      className="grid__image"
+      srcSet={imageSizes.map(
+        size =>
+          `${url}-/progressive/no/-/format/jpeg/-/quality/lighter/-/resize/${size}/ ${size}w,`
+      )}
       alt="project"
     />
-  </Container>
+  </ImageContainer>
 );
 
-const Container = styled.div`
+const ImageContainer = styled.picture`
   overflow: hidden;
   opacity: 0;
   animation: 0.4s ${fade_in} ${({ delay }) => delay}ms ease forwards;
   cursor: pointer;
   display: flex;
   justify-content: center;
-  max-width: 100rem;
+  max-width: 90rem;
+`;
 
-  .grid__image {
-    transition: transform 0.15s ease-in;
-    object-fit: cover;
-    vertical-align: middle;
-    min-width: 100%;
-    height: 100%;
-  }
+const Img = styled.img`
+  transition: transform 0.15s ease-in;
+  object-fit: cover;
+  vertical-align: middle;
+  min-width: 100%;
+  height: 100%;
 
-  .grid__image:hover {
+  &:hover {
     transform: scale(1.4);
   }
 `;

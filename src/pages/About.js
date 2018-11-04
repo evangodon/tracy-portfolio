@@ -7,12 +7,10 @@ import { media } from 'style/mixins.css';
 const About = ({ aboutData }) => (
   <Container>
     <div className="About">
-      <img src="images/profile.jpg" className="About__picture" alt="profile" />
+      <img src={aboutData.profile} className="About__picture" alt="profile" />
       <div className="About__text">
         <h3 className="About__name">{aboutData.title}</h3>
-        <p className="About__body">
-          {aboutData.content}
-        </p>
+        <p className="About__body">{aboutData.content}</p>
       </div>
     </div>
   </Container>
@@ -21,11 +19,11 @@ const About = ({ aboutData }) => (
 About.defaultProps = {
   aboutData: {
     data: {
-      title: 'File about.md was not found'
+      title: 'File about.md was not found',
     },
-    content: ''
-  }
-}
+    content: '',
+  },
+};
 
 const Container = styled.div`
   height: calc(100vh - ${header_height}); /* fill-screen until header */
@@ -41,34 +39,34 @@ const Container = styled.div`
     display: flex;
     align-items: center;
 
-
-    &__picture {
-      width: 50%;
-      object-fit: contain;
-      margin-right: 2.8rem;
-      border-radius: 2px;
-    }
-
-    &__name {
-      margin-bottom: 1.6rem;
-      align-self: flex-start;
-    }
-
-    &__body {
-      max-width: 65rem;
-    }
-
     ${media.desktop`
       width: 100%;
       flex-direction: column;
+    `};
+  }
 
-      &__picture {
+  .About__picture {
+    width: 50%;
+    object-fit: contain;
+    margin-right: 2.8rem;
+    border-radius: 2px;
+    
+    ${media.desktop`
         margin: 5rem 0;
         width: 100%;
         max-width: 65rem;
-      }
-    `}
+    `};
   }
+
+  .About__name {
+    margin-bottom: 1.6rem;
+    align-self: flex-start;
+  }
+
+  .About__body {
+    max-width: 65rem;
+  }
+
 `;
 
 export default withRouteData(About);

@@ -2,7 +2,6 @@ import React from 'react';
 import { Router } from 'react-static';
 import { hot } from 'react-hot-loader';
 import Routes from 'react-static-routes';
-import styled from 'styled-components';
 import LightBoxProvider from 'lightbox/LightBoxProvider';
 import Header from './components/Header';
 import './style/app.css';
@@ -13,15 +12,11 @@ const App = () => (
     <div>
       <LightBoxProvider>
         <Header />
-        <Content>
-          <Routes/>
-        </Content>
+        <Routes />
         <LightBox />
       </LightBoxProvider>
     </div>
   </Router>
 );
-
-const Content = styled.main``;
 
 export default hot(module)(App);
