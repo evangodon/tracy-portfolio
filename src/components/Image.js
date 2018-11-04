@@ -18,15 +18,19 @@ const Image = ({ url, context, delay }) => (
   </ImageContainer>
 );
 
-const ImageContainer = styled.picture`
+const Picture = styled.picture`
   overflow: hidden;
   opacity: 0;
-  animation: 0.4s ${fade_in} ${({ delay }) => delay}ms ease forwards;
   cursor: pointer;
   display: flex;
   justify-content: center;
   max-width: 90rem;
 `;
+
+/* With animation delay */
+const ImageContainer = styled(Picture)`
+  animation: 0.4s ${fade_in} ${p => p.delay || 0}ms ease forwards;
+`
 
 const Img = styled.img`
   transition: transform 0.15s ease-in;
