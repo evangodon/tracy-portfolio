@@ -1,5 +1,5 @@
 ---
 title: longshipfront
-portfolio_image: 'https://ucarecdn.com/daffe57a-0901-429e-9311-0c31f6c59211/'
+portfolio_image: 'https://ucarecdn.com/d56effe9-3ebe-4259-84f5-24872fa9c484/'
 ---
 
