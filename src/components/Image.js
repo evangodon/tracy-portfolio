@@ -3,15 +3,15 @@ import styled from 'styled-components';
 import { fade_in } from 'style/animations.css';
 import withLightBoxContext from 'lightbox/withLightBoxContext';
 
-const imageSizes = [320, 450, 500, 640, 750, 800, 900];
+const imageSizes = [450, 640, 800, 900];
 
-const Image = ({ url, context, delay }) => (
-  <ImageContainer delay={delay} onClick={() => context.toggleLightBox(url)}>
+const Image = ({ url, context, delay, imageIndex }) => (
+  <ImageContainer delay={delay} onClick={() => context.toggleLightBox(imageIndex)}>
     <Img
       src={url}
       srcSet={imageSizes.map(
         size =>
-          `${url}-/progressive/no/-/format/jpeg/-/quality/lighter/-/resize/${size}/ ${size}w,`
+          `${url}-/progressive/yes/-/format/jpeg/-/resize/${size}/ ${size}w`
       )}
       alt="project"
     />
@@ -24,7 +24,7 @@ const Picture = styled.picture`
   cursor: pointer;
   display: flex;
   justify-content: center;
-  max-width: 90rem;
+  max-width: 1000rem;
 `;
 
 /* With animation delay */

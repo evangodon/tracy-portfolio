@@ -36,4 +36,23 @@ injectGlobal`
     letter-spacing: 0.04em;
   }
 
+  ::-webkit-scrollbar {
+      width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: transparent; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #eee; 
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+  }
+
+  ::-webkit-scrollbar-thumb {
+  }
+
 `;

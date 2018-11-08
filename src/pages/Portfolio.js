@@ -1,25 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import { withRouteData } from 'react-static';
-import { header_height } from 'components/Header';
-import Image from 'components/Image';
+import ImageGallery from 'components/ImageGallery';
 
-const Portfolio = ({ portfolioData }) => (
-  <GridGallery>
-    {(portfolioData || []).map((project, index) => (
-      <Image key={index} url={project.portfolio_image} delay={index * 50}/>
-    ))}
-  </GridGallery>
-);
-
-export const GridGallery = styled.div`
-  height: calc(100vh - ${header_height}); /* fill-screen until header */
-  overflow-y: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
-  grid-auto-rows: minmax(40rem, 50%);
-  grid-auto-flow: row dense;
-  background: linear-gradient(to right bottom, #232526, #414345);
-`;
+const Portfolio = ({portfolioData}) => (
+  <ImageGallery imageData={portfolioData} />
+)
 
 export default withRouteData(Portfolio);

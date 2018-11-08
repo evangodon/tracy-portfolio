@@ -2,6 +2,8 @@ backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
 
+display_url: https://traci.netlify.com
+
 media_folder: "public/uploads" # Media files will be stored in the repo under public/uploads
 public_folder: "/uploads" # Folder path where uploaded files will be accessed, relative to the base of the built site
 
@@ -22,23 +24,23 @@ collections:
       - {label: "Profile Picture", name: "profile", widget: "image"}
 
   - name: "portfolio"
-    label: "Portfolio Project"
+    label: "Portfolio Projects"
     folder: "public/content/portfolio"
     slug: "{{year}}-{{month}}-{{day}}--{{slug}}"
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - label: Image
-        name: "portfolio_image"
+        name: "image_url"
         widget: "image"
 
   - name: "sketches"
-    label: "Sketch"
+    label: "Sketches"
     folder: "public/content/sketches"
     slug: "{{year}}-{{month}}-{{day}}--{{slug}}"
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - label: Image
-        name: "sketch_image"
+        name: "image_url"
         widget: "image"

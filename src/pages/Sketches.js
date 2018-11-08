@@ -1,14 +1,9 @@
 import React from 'react';
 import { withRouteData } from 'react-static';
-import Image from 'components/Image';
-import { GridGallery } from './Portfolio';
+import ImageGallery from 'components/ImageGallery';
 
-const Sketches = ({sketchesData}) => (
-  <GridGallery>
-    {(sketchesData || []).map((project, index) => (
-      <Image key={index} url={project.sketch_image} delay={index * 50}/>
-    ))}
-  </GridGallery>
+const Sketches = ({ sketchesData }) => (
+  <ImageGallery imageData={sketchesData} />
 );
 
 export default withRouteData(Sketches);
