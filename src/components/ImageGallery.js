@@ -16,7 +16,7 @@ class ImageGallery extends Component {
   render() {
     return (
       <Grid>
-        {(this.props.imageData || []).map((project, index) => (
+        {(this.props.imageData || []).map((project, index) => ( console.log(project.image_url) || 
           <Image
             key={index}
             imageIndex={index}
