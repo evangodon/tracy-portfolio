@@ -1,7 +1,5 @@
 import { injectGlobal } from 'styled-components';
 
-
-
 injectGlobal`
   :root {
     /* Colours */

@@ -11,6 +11,7 @@ const IMAGE_SIZES = [450, 800, 1200, 1500];
 class LightBox extends Component {
   state = {
     leaveAnimate: false,
+    imageStatus: null, 
   };
 
   static getDerivedStateFromProps(props, state) {

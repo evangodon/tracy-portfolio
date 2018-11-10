@@ -1,8 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-static';
+import { NavLink as Link } from 'react-static';
 import styled from 'styled-components';
 import { fade_in } from 'style/animations.css';
 import { media } from 'style/mixins.css';
+import ArtStation from './socialMedia/ArtStation';
+import LinkedIn from './socialMedia/LinkedIn';
+import Email from './socialMedia/Email';
 
 const Header = () => (
   <Nav>
@@ -12,6 +15,19 @@ const Header = () => (
     </NavLink>
     <NavLink to="/sketches">Sketches</NavLink>
     <NavLink to="/about">About</NavLink>
+    <SocialMedia>
+      <a href="#">
+        <ArtStation />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/tracy-g%C3%A9n%C3%A9reux-248b87104/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <LinkedIn />
+      </a>
+      <Email />
+    </SocialMedia>
   </Nav>
 );
 
@@ -39,14 +55,14 @@ const Nav = styled.nav`
       display: none
     `}
   }
+`;
 
-  a {
-    color: var(--black);
-    display: inline-block;
-    position: relative;
-  }
+const NavLink = styled(Link)`
+  color: var(--black);
+  display: inline-block;
+  position: relative;
 
-  a:after {
+  &:after {
     content: '';
     position: absolute;
     bottom: -6px;
@@ -59,12 +75,31 @@ const Nav = styled.nav`
     transition: 0.2s cubic-bezier(1, 0, 0, 1) 0.16s;
   }
 
-  .active:after {
+  &.active:after {
     transform: scaleX(1);
   }
 
-  a + a {
+  & + & {
     margin-left: 1.8rem;
+  }
+`;
+
+const SocialMedia = styled.div`
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+
+  a + a {
+    margin-left: 1.6rem;
+  }
+
+  svg {
+    transition: opacity 0.3s ease;
+  }
+
+  svg:hover {
+    cursor: pointer;
+    opacity: 0.6;
   }
 `;
 
