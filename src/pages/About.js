@@ -4,17 +4,18 @@ import { withRouteData } from 'react-static';
 import { header_height } from 'components/Header';
 import { media } from 'style/mixins.css';
 
-const About = ({ aboutData }) => (
-  <Container>
-    <div className="About">
-      <img src={aboutData.profile} className="About__picture" alt="profile" />
-      <div className="About__text">
-        <h3 className="About__name">{aboutData.title}</h3>
-        <p className="About__body">{aboutData.content}</p>
+const About = ({ aboutData }) =>
+  console.log(aboutData.content) || (
+    <Container>
+      <div className="About">
+        <img src={aboutData.profile} className="About__picture" alt="profile" />
+        <div className="About__text">
+          <h3 className="About__name">{aboutData.title}</h3>
+          <p className="About__body">{aboutData.content}</p>
+        </div>
       </div>
-    </div>
-  </Container>
-);
+    </Container>
+  );
 
 About.defaultProps = {
   aboutData: {
@@ -35,26 +36,32 @@ const Container = styled.div`
   background: #fff;
 
   .About {
-    max-width: 120rem;
+    max-width: 90rem;
     display: flex;
     align-items: center;
 
     ${media.desktop`
-      width: 100%;
+      width: 80%;
       flex-direction: column;
     `};
   }
 
   .About__picture {
     width: 50%;
-    object-fit: contain;
-    margin-right: 2.8rem;
+    object-fit: cover;
+    margin-right: 3.6rem;
     border-radius: 2px;
-    
+    border-radius: 50%;
+    --size: 20rem;
+    min-width: var(--size);
+    min-height: var(--size);
+    height: var(--size);
+    width: var(--size);
+
     ${media.desktop`
         margin: 5rem 0;
-        width: 100%;
-        max-width: 65rem;
+        width: 30%;
+        max-width: 30rem;
     `};
   }
 
@@ -64,9 +71,9 @@ const Container = styled.div`
   }
 
   .About__body {
-    max-width: 65rem;
+    max-width: 55rem;
+    font-weight: 1.8rem;
   }
-
 `;
 
 export default withRouteData(About);

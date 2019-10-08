@@ -5,10 +5,11 @@ import { fade_in } from 'style/animations.css';
 import { media } from 'style/mixins.css';
 import ArtStation from './socialMedia/ArtStation';
 import LinkedIn from './socialMedia/LinkedIn';
-import Email from './socialMedia/Email';
+import Logo from './Logo';
 
 const Header = () => (
   <Nav>
+    <Logo />
     <h1>Tracy concept art</h1>
     <NavLink exact to="/">
       Portfolio
@@ -26,15 +27,14 @@ const Header = () => (
       >
         <LinkedIn />
       </a>
-      <Email />
     </SocialMedia>
   </Nav>
 );
 
-export const header_height = '10rem';
+export const header_height = '9rem';
 
 const Nav = styled.nav`
-  background-color: var(--light-gray);
+  background-color: var(--black);
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -44,12 +44,14 @@ const Nav = styled.nav`
   padding: 0 4rem;
   z-index: var(--z-header);
   animation: ${fade_in} 0.2s ease;
+  color: #fff;
 
   h1 {
-    font-size: 3.4rem;
+    font-size: 2.4rem;
     text-transform: uppercase;
-    margin-right: 2.8rem;
+    margin-right: 10rem;
     letter-spacing: 0.05rem;
+    font-weight: 300;
 
     ${media.desktop`
       display: none
@@ -61,6 +63,8 @@ const NavLink = styled(Link)`
   color: var(--black);
   display: inline-block;
   position: relative;
+  color: #fff;
+  font-weight: 300;
 
   &:after {
     content: '';
@@ -100,6 +104,7 @@ const SocialMedia = styled.div`
   svg:hover {
     cursor: pointer;
     opacity: 0.6;
+    fill: #fff;
   }
 `;
 

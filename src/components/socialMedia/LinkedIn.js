@@ -1,6 +1,6 @@
 import React from 'react';
 
-const fillColor = '#212121';
+const fillColor = '#fff';
 const size = 24;
 
 const LinkedIn = () => (
