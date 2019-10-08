@@ -5,7 +5,7 @@ import { getAboutData, getPortfolioData, getSketchesData } from './src/api';
 export default {
   siteRoot: 'https://traci.netlify.com',
   getSiteData: () => ({
-    title: 'React Static'
+    title: 'React Static',
   }),
   getRoutes: async () => {
     const aboutData = await getAboutData();
@@ -15,22 +15,22 @@ export default {
       {
         path: '/',
         component: 'src/pages/Portfolio',
-        getData: () => ({ portfolioData })
+        getData: () => ({ portfolioData }),
       },
       {
         path: '/sketches',
         component: 'src/pages/Sketches',
-        getData: () => ({ sketchesData })
+        getData: () => ({ sketchesData }),
       },
       {
         path: '/about',
         component: 'src/pages/About',
-        getData: () => ({ aboutData })
+        getData: () => ({ aboutData }),
       },
       {
         is404: true,
-        component: 'src/pages/404'
-      }
+        component: 'src/pages/404',
+      },
     ];
   },
   renderToHtml: (render, Comp, meta) => {
@@ -47,12 +47,22 @@ export default {
         <Html>
           <Head>
             <meta charSet="UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+            <title>Tracy Genereux</title>
+            <link
+              rel="icon"
+              type="image/png"
+              sizes="32x32"
+              href="images/T.png"
+            />
             {renderMeta.styleTags}
           </Head>
           <Body>{children}</Body>
         </Html>
       );
     }
-  }
+  },
 };
