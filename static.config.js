@@ -3,7 +3,7 @@ import { ServerStyleSheet } from 'styled-components';
 import { getAboutData, getPortfolioData, getSketchesData } from './src/api';
 
 export default {
-  siteRoot: 'https://traci.netlify.com',
+  siteRoot: 'https://tracygenereux.ml/',
   getSiteData: () => ({
     title: 'React Static',
   }),
