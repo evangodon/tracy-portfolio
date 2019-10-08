@@ -8,7 +8,11 @@ const About = ({ aboutData }) =>
   console.log(aboutData.content) || (
     <Container>
       <div className="About">
-        <img src={aboutData.profile} className="About__picture" alt="profile" />
+        <img
+          src={`${aboutData.profile}/-/preview/420x420/-/quality/lighter/`}
+          className="About__picture"
+          alt="profile"
+        />
         <div className="About__text">
           <h3 className="About__name">{aboutData.title}</h3>
           <p className="About__body">{aboutData.content}</p>
